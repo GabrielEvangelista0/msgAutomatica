@@ -9,7 +9,8 @@ supabase = create_client(
 def buscar_contatos():
     #Busca os contatos na tabela "contatos" do Supabase, limitando a 3 resultados
     try:
-        response = (
+        response = ( 
+            # Acessa a tabela "contatos" do supabase, seleciona todas as colunas
             supabase
             .table("contatos")
             .select("*")
