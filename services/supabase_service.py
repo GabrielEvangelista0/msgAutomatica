@@ -1,5 +1,8 @@
 from supabase import create_client
 from config import SUPABASE_URL, SUPABASE_KEY
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 supabase = create_client(
     SUPABASE_URL,
@@ -19,6 +22,6 @@ def buscar_contatos():
         )
         return response.data
     except Exception as e:
-        print(f"Erro ao buscar contatos: {e}")
+        logging.error(f"Erro ao buscar contatos: {e}")
         return []
     

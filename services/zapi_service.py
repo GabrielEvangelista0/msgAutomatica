@@ -1,10 +1,14 @@
 import requests
+import logging
 
 from config import (
     ZAPI_INSTANCE_ID,
     ZAPI_TOKEN,
     ZAPI_CLIENT_TOKEN
 )
+
+logging.basicConfig(level=logging.INFO)
+
 
 URL = (
     f"https://api.z-api.io/"
@@ -32,5 +36,5 @@ def enviar_mensagem(numero, mensagem):
 
         return response
     except Exception as e:
-        print(f"Erro ao enviar mensagem para {numero}: {e}")
+        logging.error(f"Erro ao enviar mensagem para {numero}: {e}")
         return None
