@@ -1,6 +1,6 @@
 # Msg Automática
 
-Aplicação para enviar mensagens automáticas via WhatsApp usando ZAPI, com contatos armazenados no Supabase.
+Aplicação desenvolvida em Python para integração entre Supabase e Z-API. O sistema busca até 3 contatos cadastrados no banco de dados e envia automaticamente mensagens personalizadas via WhatsApp.
 
 ## Setup da Tabela
 
@@ -9,15 +9,15 @@ Crie uma tabela chamada `contatos` no Supabase no editor sql com a seguinte estr
 create table contatos(
   id bigint generated always as identity primary key,
   nome text not null,
-  telefone text unique not null,
+  telefone text unique not null
 );
 Para inserir valores na tabela no editor sql rode o comando:
 
 insert into contatos(nome, telefone)
 values
-("nome1", "999999999"),
-("nome2", "999999999"),
-("nome3", "999999999");
+('nome1', '999999999'),
+('nome2', '999999998'),
+('nome3', '999999997');
 
 ## Variáveis de Ambiente
 
