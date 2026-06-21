@@ -7,12 +7,17 @@ supabase = create_client(
 )
 
 def buscar_contatos():
-    response = (
-        supabase
-        .table("contatos")
-        .select("*")
-        .limit(3)
-        .execute()
-    )
-
-    return response.data
+    #Busca os contatos na tabela "contatos" do Supabase, limitando a 3 resultados
+    try:
+        response = (
+            supabase
+            .table("contatos")
+            .select("*")
+            .limit(3) #limuta a 3 resultados
+            .execute()
+        )
+        return response.data
+    except Exception as e:
+        print(f"Erro ao buscar contatos: {e}")
+        return []
+    
