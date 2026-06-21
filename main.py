@@ -13,8 +13,8 @@ def main():
         return
 
     for contato in contatos:
-        logging.info(f"Processando contato: {contato['nome']} - ID: {contato['id']}, Telefone: {contato['telefone']}")
         mensagem = f"Olá, {contato['nome']} teste de envio de mensagem automática."
+        logging.info(f"Processando contato: {contato['nome']} - ID: {contato['id']}, Telefone: {contato['telefone']}")
         # Envia a mensagem para o contato usando a função enviar_mensagem
         response = enviar_mensagem(contato['telefone'], mensagem)
         # Verifica se a mensagem foi enviada com sucesso e imprime o resultado
